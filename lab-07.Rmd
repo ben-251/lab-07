@@ -103,8 +103,9 @@ This model is not very good, or the data is not very linear with respect to the 
 6. Make a plot of residuals vs. predicted values for the model above.
 
 ```{r viz-score_bty_fit-diagnostic}
-score_bty_aug <- augment(score_bty_fit$fit) %>%
-  ggplot(mapping=aes(.resid, .fitted)) + geom_point()
+score_bty_aug <- augment(score_bty_fit$fit)
+  ggplot(score_bty_aug, mapping=aes(.resid, .fitted)) +
+  geom_point()
 ```
 
 # Exercise 3: Simple Linear regression with a categorical predictor
